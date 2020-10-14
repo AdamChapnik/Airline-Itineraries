@@ -5,6 +5,6 @@ The following graphs visualize the results, associating the distance of the itin
 
 [Add graphs]
 
-... is a complete writeup of the analysis and results. For the RMarkdown file, see ... 
+Itineraries_Pt._2.html is a complete writeup of the analysis and results. For the RMarkdown file, see Itineraries_Pt._2.Rmd. 
 
 The dataset was too large to upload to GitHub, but can be downloaded from https://www.transtats.bts.gov/Fields.asp. 
