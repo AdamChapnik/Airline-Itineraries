@@ -309,7 +309,8 @@ suppressWarnings(print(b))
 I then checked whether there were unusual points for the model. By calculating the Cook’s distance and standardized residual of each point in the dataset, I found there were a handful of unusual points which can be seen in the graph below. However, these observations seemed to be average itineraries on the whole. It is likely that they only appeared to be ususual points because of the sample from the dataset, so I left all points in the dataset.
 
 ```{r echo=FALSE}
-plot(modBIC4, c(4,5)) 
+a <- plot(modBIC4, c(4,5)) 
+suppressWarnings(print(a))
 ```
 
 ```{r eval=FALSE, include=FALSE}
@@ -396,11 +397,16 @@ max(d$MARKET_DISTANCE) # longest >= three layovers
 ```
 
 
-```{r echo=FALSE}
+```{r include=FALSE}
 a <- plot_model(mod1, type = "pred", terms = c("MARKET_DISTANCE [1:5095]" , "numLayovers"))
 b <- plot_model(mod1, type = "pred", terms = c("MARKET_DISTANCE [5096:8763]" , "numLayovers [1:7]"))
 c <- plot_model(mod1, type = "pred", terms = c("MARKET_DISTANCE [8764:10896]" , "numLayovers [2:7]"))
 d <- plot_model(mod1, type = "pred", terms = c("MARKET_DISTANCE [10897:11763]" , "numLayovers [3:7]"))
+```
+
+
+```{r echo=FALSE}
+theme_set(theme_sjplot())
 a
 b
 c
